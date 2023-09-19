@@ -20,12 +20,12 @@ const MODES = [
     icon: Layers
   },
   {
-    key: 'viewports',
+    key: 'viewports_pharaon_disabled',
     label: 'Viewports Mode',
     icon: Monitor
   },
   {
-    key: 'code',
+    key: 'code_pharaon_disabled',
     label: 'Code Mode',
     icon: Code
   }
@@ -120,7 +120,7 @@ const Logo = () => (
         sx={{
           fontSize: 0,
           mt: '2px',
-          ml: 2
+          ml: 1
         }}
       >
         v{version}
