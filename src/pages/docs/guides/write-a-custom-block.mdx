@@ -1,0 +1,185 @@
+---
+title: Write a custom block
+---
+
+import Layout from '../../../components/layout'
+export default Layout
+
+# Write a custom block
+
+A Block is a component that the editor can control. It's typically a
+component that has pre-made styles and accepts a few props for changing
+the content.
+
+Components can expose a styling API using `Controls.Style` which maps to the
+`sx` prop in Theme UI. There are component types you can specify like
+`Typography` and `Layout` to constrain which props are possible.
+
+## Adding controls to a component
+
+There are two types of controls that can be exposed. Prop controls map to
+common JSX primitive prop types like strings, numbers, and enums. There are
+also style properties which can be added to expose styling knobs and dials.
+
+### Prop controls
+
+After instantiating a component, you can use `Controls.addPropertyControls`
+which will expose controls in the editor sidepanel.
+
+The following adds a string input for the quote.
+
+```js
+Controls.addPropertyControls(BlockQuote.Quote, {
+  children: {
+    type: Controls.String,
+    required: true,
+    placeholder: 'What did someone say?'
+  },
+  sx: {
+    type: Controls.Style.Typography
+  }
+})
+```
+
+[See Controls page &rarr;](/docs/controls)
+
+### Style controls
+
+If you want to expose style controls, you can do so with `Controls.addStyleControls`.
+
+```js
+Controls.addStyleControls(BlockQuote, Controls.Style.Layout)
+```
+
+Styles controls have particular presets that can be used, too.
+
+- `Controls.Style.Layout`
+- `Controls.Style.Typography`
+- `Controls.Style.Variant`
+
+### `sx` or `css` prop controls
+
+You can combine `Controls.addPropertyControls` with `Controls.Style` as a shortcut to
+avoid `Controls.addStyleControls`. For Theme UI, you'd set it to `sx`. Using Emotion
+or Styled Components you can specify `css`.
+
+```js
+Controls.addPropertyControls(BlockQuote.Quote, {
+  children: {
+    type: Controls.String,
+    required: true,
+    placeholder: 'What did someone say?'
+  },
+  sx: {
+    type: Controls.Style.Typography
+  }
+})
+```
+
+## Using a block
+
+The Blocks editor accepts a `blocks` prop where you specify
+the component, its import location, and its usage. When the
+block is dragged onto the canvas, the usage code is what ends
+up in the document.
+
+```js
+import React from 'react'
+import { Editor } from 'blocks-ui'
+import { HeaderBasic } from '@blocks/components'
+
+export default () => <Editor blocks={{ HeaderBasic }} jsx={myJSX} />
+```
+
+## Example block component
+
+```js
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { Link } from '@theme-ui/components'
+import { ControlType, applyPropertyControls } from 'property-controls'
+
+const HeaderBasic = ({ justifyContent = 'space-between', ...props }) => {
+  return (
+    <header
+      sx={{
+        variant: 'styles.header',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent
+      }}
+      {...props}
+    />
+  )
+}
+
+HeaderBasic.Logo = props => {
+  return (
+    <Link
+      sx={{
+        variant: 'styles.navLink',
+        p: 2
+      }}
+      {...props}
+    />
+  )
+}
+HeaderBasic.Nav = props => {
+  return <nav {...props} />
+}
+HeaderBasic.Link = props => {
+  return (
+    <Link
+      sx={{
+        variant: 'styles.navLink',
+        p: 2
+      }}
+      {...props}
+    />
+  )
+}
+
+applyPropertyControls(HeaderBasic, {
+  justifyContent: {
+    type: ControlType.Enum,
+    defaultValue: 'right',
+    options: ['space-between', 'start', 'space-evenly']
+  },
+  sx: {
+    type: ControlType.Style
+  }
+})
+
+const linkControls = {
+  children: {
+    title: 'Text',
+    type: ControlType.String,
+    required: true
+  },
+  to: {
+    title: 'URL',
+    type: ControlType.String,
+    defaultValue: '#!',
+    required: true
+  },
+  sx: {
+    type: ControlType.Style
+  }
+}
+
+applyPropertyControls(HeaderBasic.Logo, linkControls)
+applyPropertyControls(HeaderBasic.Link, linkControls)
+
+HeaderBasic.usage = `
+  <HeaderBasic>
+    <HeaderBasic.Logo to="/">Hello</HeaderBasic.Logo>
+    <HeaderBasic.Nav>
+      <HeaderBasic.Link to="/about">About</HeaderBasic.Link>
+      <HeaderBasic.Link to="/blog">Blog</HeaderBasic.Link>
+      <HeaderBasic.Link to="/contact">Contact</HeaderBasic.Link>
+    </HeaderBasic.Nav>
+  </HeaderBasic>
+`
+
+export default HeaderBasic
+```
