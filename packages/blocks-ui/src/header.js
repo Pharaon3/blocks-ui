@@ -18,16 +18,6 @@ const MODES = [
     key: 'canvas',
     label: 'Canvas Mode',
     icon: Layers
-  },
-  {
-    key: 'viewports',
-    label: 'Viewports Mode',
-    icon: Monitor
-  },
-  {
-    key: 'code',
-    label: 'Code Mode',
-    icon: Code
   }
 ]
 
@@ -40,7 +30,7 @@ const ToggleXRay = () => {
       icon={Grid}
       isActive={isActive}
       onClick={() => editorState.update({ ...editorState, xray: !isActive })}
-      disabled={editorState.mode === MODES[2].key}
+      disabled={editorState.mode === MODES[0].key}
     />
   )
 }

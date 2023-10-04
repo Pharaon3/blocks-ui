@@ -9,16 +9,6 @@ import { useEditor } from './providers/editor'
 import { useCanvas } from './providers/canvas'
 import { useElementSize } from './use-element-size'
 
-const CodeMode = Loadable({
-  loader: () => import('./modes/code'),
-  loading: Loader
-})
-
-const ViewportsMode = Loadable({
-  loader: () => import('./modes/viewports'),
-  loading: Loader
-})
-
 const CanvasMode = Loadable({
   loader: () => import('./modes/canvas'),
   loading: Loader
@@ -49,10 +39,6 @@ export const CanvasWrap = props => {
 export const Canvas = () => {
   const { mode } = useEditor()
   switch (mode) {
-    case 'code':
-      return <CodeMode />
-    case 'viewports':
-      return <ViewportsMode />
     case 'canvas':
       return <CanvasMode />
     default:
