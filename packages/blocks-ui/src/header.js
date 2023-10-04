@@ -115,16 +115,7 @@ const Logo = () => (
         gridGap: 2
       }}
     >
-      Blocks
-      <span
-        sx={{
-          fontSize: 0,
-          mt: '2px',
-          ml: 1
-        }}
-      >
-        v{version}
-      </span>
+      Blocks-UI
     </div>
   </a>
 )
