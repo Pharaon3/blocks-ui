@@ -28,7 +28,7 @@ const Layout = props => {
 
 const Demo = () => (
   <Fragment>
-    <SEO title="Demo" />
+    <SEO title="Beta" />
     <Editor src={JSX} blocks={Blocks} layout={Layout} />
   </Fragment>
 )

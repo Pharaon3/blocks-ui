@@ -19,7 +19,7 @@ export default ({ children, _frontmatter: { title } = {} }) => (
     <Container as="main" mb={[3, 4, 5]}>
       <Link to="/">
         <img
-          src="https://user-images.githubusercontent.com/1424573/61592179-e0fda080-ab8c-11e9-9109-166cc7c86b43.png"
+          src="./images/block.png"
           alt="blocks logo"
           width="80"
           style={{

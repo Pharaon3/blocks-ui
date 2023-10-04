@@ -85,7 +85,7 @@ const Block = ({ block }) => {
         <Link to="/blocks">
           <img
             alt="Blocks logo"
-            src="https://user-images.githubusercontent.com/1424573/61592179-e0fda080-ab8c-11e9-9109-166cc7c86b43.png"
+            src="./images/block.png"
             sx={{
               mt: -1,
               height: 24,
