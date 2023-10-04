@@ -99,7 +99,7 @@ export default ({
           }}
         >
           <a
-            href="https://github.com/blocks/blocks"
+            href="/"
             aria-label="Github"
             target="_blank"
             rel="noopener noreferrer"
@@ -111,7 +111,7 @@ export default ({
             <GitHub size={18} />
           </a>
           <a
-            href="https://twitter.com/blocks_ui"
+            href="/"
             aria-label="Twitter"
             target="_blank"
             rel="noopener noreferrer"
@@ -221,7 +221,7 @@ export default ({
             />
           </Link>
           <a
-            href="https://github.com/blocks/blocks"
+            href="/"
             aria-label="Github"
             target="_blank"
             rel="noopener noreferrer"
@@ -234,7 +234,7 @@ export default ({
             <GitHub size={18} />
           </a>
           <a
-            href="https://twitter.com/blocks_ui"
+            href="/"
             aria-label="Github"
             target="_blank"
             rel="noopener noreferrer"
