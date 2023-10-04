@@ -103,7 +103,7 @@ const Logo = () => (
     }}
   >
     <img
-      src="https://user-images.githubusercontent.com/1424573/61592179-e0fda080-ab8c-11e9-9109-166cc7c86b43.png"
+      src="./images/block.png"
       alt="blocks logo"
       width="38"
     />
@@ -120,7 +120,7 @@ const Logo = () => (
         sx={{
           fontSize: 0,
           mt: '2px',
-          ml: 2
+          ml: 1
         }}
       >
         v{version}

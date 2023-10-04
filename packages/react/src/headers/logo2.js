@@ -33,10 +33,10 @@ HeaderLogo2.Logo = ({ to, ...props }) => {
     >
       <img
         alt="Logo"
-        src="https://contrast.now.sh/white/black?size=48&fontSize=2&baseline=2&fontWeight=900&radius=32&text=UI"
+        src="./images/block.png"
         sx={{
           verticalAlign: 'middle',
-          py: 3
+          width: 60
         }}
         {...props}
       />

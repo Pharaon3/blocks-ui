@@ -73,10 +73,10 @@ applyPropertyControls(QuoteBasic.Author, {
 QuoteBasic.usage = `
   <QuoteBasic>
     <QuoteBasic.Content>
-      Science is magic that works.
+      This is a quote.
     </QuoteBasic.Content>
     <QuoteBasic.Author>
-      Kurt Vonnegut
+      I said.
     </QuoteBasic.Author>
   </QuoteBasic>
 `

@@ -89,12 +89,10 @@ TaglineBold.usage = `
   <TaglineBold>
     <TaglineBold.Content>
       <TaglineBold.Emphasis>
-        Hello, world!
+      TaglineBold.Emphasis
       </TaglineBold.Emphasis>
       <TaglineBold.Normal>
-        A bold tagline is great for a section of text that needs to
-        stand out from the rest of the page. It draws you in. It is
-        extremely hard to ignore.
+        Bold contents here.
       </TaglineBold.Normal>
     </TaglineBold.Content>
   </TaglineBold>

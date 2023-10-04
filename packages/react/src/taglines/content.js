@@ -104,18 +104,20 @@ TaglineContent.usage = `
   <TaglineContent>
     <TaglineContent.Container>
       <TaglineContent.Heading>
-        What is a block?
+        Title
       </TaglineContent.Heading>
       <TaglineContent.Paragraph>
-        A Block refers to a piece of content or a component.
-        It's a section of your content while a document is a
-        collection of blocks.
+        Some paragraphs here.
+        Some paragraphs here.
+        Some paragraphs here.
+        Some paragraphs here.
+        Some paragraphs here.
+        Some paragraphs here.
       </TaglineContent.Paragraph>
       <TaglineContent.Paragraph>
-        Blocks can be simple like a paragraph of text or even
-        a box with a tomato background color. Blocks can be
-        complex like an embedded spreadsheet or a chart that
-        fetches live data.
+        This is another paragraph.
+        This is another paragraph.
+        This is another paragraph.
       </TaglineContent.Paragraph>
     </TaglineContent.Container>
   </TaglineContent>
