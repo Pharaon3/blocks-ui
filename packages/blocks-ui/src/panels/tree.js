@@ -102,14 +102,14 @@ const TreePanel = () => {
           key={child.id}
           tree={child}
           depth={0}
-          // selectedId={currentElementId}
-          // hoveredId={currentHoveredElementId}
+          selectedId={currentElementId}
+          hoveredId={currentHoveredElementId}
           onSelect={elementId => {
-            // setCurrentElementId(elementId)
-            // updateActiveTabByName('editor')
+            setCurrentElementId(elementId)
+            updateActiveTabByName('editor')
           }}
-          // onMouseEnter={elementId => hoverElementId(elementId)}
-          // onMouseLeave={elementId => removeHoveredElementId(elementId)}
+          onMouseEnter={elementId => hoverElementId(elementId)}
+          onMouseLeave={elementId => removeHoveredElementId(elementId)}
         />
       ))}
     </div>
